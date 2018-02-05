@@ -31,10 +31,10 @@ public class Address {
         if (!isValidAddress(trimmedAddress) || splitAddress.length != 4) {
             throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
         }
-        block = (splitAddress[0],true);
-        street = (splitAddress[1],true);
-        unit = (splitAddress[2],true);
-        postal = (splitAddress[3],true);
+        block = new Block(splitAddress[0], true);
+        street = new Street (splitAddress[1], true);
+        unit = new Unit (splitAddress[2], true);
+        postal = new Postal (splitAddress[3], true);
         this.value = trimmedAddress;
     }
 

@@ -33,3 +33,4 @@ public class Postal {
     public static boolean isValidAddress(String test) {
         return test.matches(ADDRESS_VALIDATION_REGEX);
     }
+}

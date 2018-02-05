@@ -9,7 +9,7 @@ import seedu.addressbook.data.exception.IllegalValueException;
 public class Unit {
 
     public static final String EXAMPLE = "123c";
-    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Unit number must be numeric or "-" only";
+    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Unit number must be numeric or - only";
     public static final String ADDRESS_VALIDATION_REGEX = "[123456789-]+";
 
     public final String value;
@@ -33,3 +33,4 @@ public class Unit {
     public static boolean isValidAddress(String test) {
         return test.matches(ADDRESS_VALIDATION_REGEX);
     }
+}
