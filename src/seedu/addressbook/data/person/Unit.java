@@ -8,9 +8,9 @@ import seedu.addressbook.data.exception.IllegalValueException;
  */
 public class Unit {
 
-    public static final String EXAMPLE = "123c";
-    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Unit number must be numeric or - only";
-    public static final String ADDRESS_VALIDATION_REGEX = "[123456789-]+";
+    public static final String EXAMPLE = "#55-55";
+    public static final String MESSAGE_UNIT_CONSTRAINTS = "Unit number must be numeric or - or # only";
+    public static final String UNIT_VALIDATION_REGEX = "[0123456789-]+";
 
     public final String value;
 
@@ -22,7 +22,7 @@ public class Unit {
     public Unit(String unit, boolean isPrivate) throws IllegalValueException {
         String trimmedUnit = unit.trim();
         if (!isValidAddress(trimmedUnit)) {
-            throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
+            throw new IllegalValueException(MESSAGE_UNIT_CONSTRAINTS);
         }
         this.value = trimmedUnit;
     }
@@ -31,6 +31,6 @@ public class Unit {
      * Returns true if a given string is a valid person address.
      */
     public static boolean isValidAddress(String test) {
-        return test.matches(ADDRESS_VALIDATION_REGEX);
+        return test.matches(UNIT_VALIDATION_REGEX);
     }
 }

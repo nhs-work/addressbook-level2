@@ -8,9 +8,9 @@ import seedu.addressbook.data.exception.IllegalValueException;
  */
 public class Postal {
 
-    public static final String EXAMPLE = "123c";
-    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Potal code can only be numeric";
-    public static final String ADDRESS_VALIDATION_REGEX = "[123456789]+";
+    public static final String EXAMPLE = "123456";
+    public static final String MESSAGE_POSTAL_CONSTRAINTS = "Postal code can only be numeric";
+    public static final String POSTAL_VALIDATION_REGEX = "[0123456789]+";
 
     public final String value;
 
@@ -22,7 +22,7 @@ public class Postal {
     public Postal(String postal, boolean isPrivate) throws IllegalValueException {
         String trimmedPostal = postal.trim();
         if (!isValidAddress(trimmedPostal)) {
-            throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
+            throw new IllegalValueException(MESSAGE_POSTAL_CONSTRAINTS);
         }
         this.value = trimmedPostal;
     }
@@ -31,6 +31,6 @@ public class Postal {
      * Returns true if a given string is a valid person address.
      */
     public static boolean isValidAddress(String test) {
-        return test.matches(ADDRESS_VALIDATION_REGEX);
+        return test.matches(POSTAL_VALIDATION_REGEX);
     }
 }

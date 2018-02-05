@@ -8,9 +8,9 @@ import seedu.addressbook.data.exception.IllegalValueException;
  */
 public class Block {
 
-    public static final String EXAMPLE = "123c";
-    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Block addresses can be in any format without any whitespace characters";
-    public static final String ADDRESS_VALIDATION_REGEX = "\\S+";
+    public static final String EXAMPLE = "Block 123c";
+    public static final String MESSAGE_BLOCK_CONSTRAINTS = "Block addresses can be in any format";
+    public static final String BLOCK_VALIDATION_REGEX = ".+";
 
     public final String value;
 
@@ -22,7 +22,7 @@ public class Block {
     public Block(String block, boolean isPrivate) throws IllegalValueException {
         String trimmedBLock = block.trim();
         if (!isValidAddress(trimmedBLock)) {
-            throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
+            throw new IllegalValueException(MESSAGE_BLOCK_CONSTRAINTS);
         }
         this.value = trimmedBLock;
     }
@@ -31,6 +31,6 @@ public class Block {
      * Returns true if a given string is a valid person address.
      */
     public static boolean isValidAddress(String test) {
-        return test.matches(ADDRESS_VALIDATION_REGEX);
+        return test.matches(BLOCK_VALIDATION_REGEX);
     }
 }
