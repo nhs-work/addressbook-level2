@@ -297,6 +297,18 @@
 || 
 || 0 persons listed!
 || ===================================================
+|| Enter command: || [Command entered:  add Tom p/1 e/1@1.com a/Block 1, Street 1, #1-11, 123456, wrongnumberofarguements1]
+|| Person addresses will contain block, street, unit and postal code separated by a comma
+|| ===================================================
+|| Enter command: || [Command entered:  add Tom p/1 e/1@1.com a/Block 1, Street 1, #1-11, 12345a]
+|| Postal code can only be numeric
+|| ===================================================
+|| Enter command: || [Command entered:  add Tom p/1 e/1@1.com a/Block 1, Street 1, #1a11, 123456]
+|| Unit number must be numeric or - or # only
+|| ===================================================
+|| Enter command: || [Command entered:  add Tom p/1 e/1@1.com a/Block 1   , Street 1  , #1-11,        123456]
+|| New person added: Tom Phone: 1 Email: 1@1.com Address: Block 1, Street 1, #1-11, 123456 Tags: 
+|| ===================================================
 || Enter command: || [Command entered:  exit]
 || Exiting Address Book as requested ...
 || ===================================================

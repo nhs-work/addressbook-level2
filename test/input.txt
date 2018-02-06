@@ -149,6 +149,22 @@
   list
 
 ##########################################################
+# test arguments for address for add command
+##########################################################
+
+  # should catch invalid number of args
+  add Tom p/1 e/1@1.com a/Block 1, Street 1, #1-11, 123456, wrongnumberofarguements1
+
+  # should catch invalid format of args for postal section for address
+  add Tom p/1 e/1@1.com a/Block 1, Street 1, #1-11, 12345a
+
+  # should catch invalid format of args for unit section for address
+  add Tom p/1 e/1@1.com a/Block 1, Street 1, #1a11, 123456
+
+  # should verify that inputs will be trimmed of excess whitespaces
+  add Tom p/1 e/1@1.com a/Block 1   , Street 1  , #1-11,        123456
+
+##########################################################
 # test exit command
 ##########################################################
 
