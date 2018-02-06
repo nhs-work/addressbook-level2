@@ -9,10 +9,10 @@ import seedu.addressbook.data.exception.IllegalValueException;
 public class Address {
 
     public static final String EXAMPLE = "123, some street";
-    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Person addresses must contain block, street, unit and postal code separated by a backslash";
+    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Person addresses will contain block, street, unit and postal code separated by a comma";
     public static final String ADDRESS_VALIDATION_REGEX = ".+";
 
-    public final String value;
+    public String value = "";
     private Block block;
     private Street street;
     private Unit unit;
@@ -26,16 +26,27 @@ public class Address {
      */
     public Address(String address, boolean isPrivate) throws IllegalValueException {
         String trimmedAddress = address.trim();
-        String[] splitAddress = trimmedAddress.split("[/]");
+        String[] splitAddress = trimmedAddress.split("[,]");
         this.isPrivate = isPrivate;
-        if (!isValidAddress(trimmedAddress) || splitAddress.length != 4) {
+        if (!isValidAddress(trimmedAddress) || splitAddress.length > 4) {
             throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
         }
-        block = new Block(splitAddress[0], true);
-        street = new Street (splitAddress[1], true);
-        unit = new Unit (splitAddress[2], true);
-        postal = new Postal (splitAddress[3], true);
-        this.value = trimmedAddress;
+        if(splitAddress.length >= 1) {
+            block = new Block(splitAddress[0], true);
+            this.value = block.value;
+        }
+        if(splitAddress.length >= 2) {
+            street = new Street(splitAddress[1], true);
+            this.value +=  (", " + street.value);
+        }
+        if(splitAddress.length >= 3) {
+            unit = new Unit(splitAddress[2], true);
+            this.value +=  (", " + unit.value);
+        }
+        if(splitAddress.length == 4) {
+            postal = new Postal(splitAddress[3], true);
+            this.value +=  (", " + postal.value);
+        }
     }
 
     /**

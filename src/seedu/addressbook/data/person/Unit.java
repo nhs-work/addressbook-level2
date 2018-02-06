@@ -10,7 +10,7 @@ public class Unit {
 
     public static final String EXAMPLE = "#55-55";
     public static final String MESSAGE_UNIT_CONSTRAINTS = "Unit number must be numeric or - or # only";
-    public static final String UNIT_VALIDATION_REGEX = "[0123456789-]+";
+    public static final String UNIT_VALIDATION_REGEX = "[0123456789#-]+";
 
     public final String value;
 
