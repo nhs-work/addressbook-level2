@@ -32,19 +32,19 @@ public class Address {
             throw new IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
         }
         if(splitAddress.length >= 1) {
-            block = new Block(splitAddress[0], true);
+            block = new Block(splitAddress[0], isPrivate);
             this.value = block.value;
         }
         if(splitAddress.length >= 2) {
-            street = new Street(splitAddress[1], true);
+            street = new Street(splitAddress[1], isPrivate);
             this.value +=  (", " + street.value);
         }
         if(splitAddress.length >= 3) {
-            unit = new Unit(splitAddress[2], true);
+            unit = new Unit(splitAddress[2], isPrivate);
             this.value +=  (", " + unit.value);
         }
         if(splitAddress.length == 4) {
-            postal = new Postal(splitAddress[3], true);
+            postal = new Postal(splitAddress[3], isPrivate);
             this.value +=  (", " + postal.value);
         }
     }

@@ -13,6 +13,7 @@ public class Block {
     public static final String BLOCK_VALIDATION_REGEX = ".+";
 
     public final String value;
+    private boolean isPrivate;
 
     /**
      * Validates given address.
@@ -25,6 +26,7 @@ public class Block {
             throw new IllegalValueException(MESSAGE_BLOCK_CONSTRAINTS);
         }
         this.value = trimmedBLock;
+        this.isPrivate = isPrivate;
     }
 
     /**

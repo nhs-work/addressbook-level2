@@ -13,6 +13,7 @@ public class Street {
     public static final String STREET_VALIDATION_REGEX = ".+";
 
     public final String value;
+    private boolean isPrivate;
 
     /**
      * Validates given address.
@@ -25,6 +26,7 @@ public class Street {
             throw new IllegalValueException(MESSAGE_STREET_CONSTRAINTS);
         }
         this.value = trimmedStreet;
+        this.isPrivate = isPrivate;
     }
 
     /**

@@ -13,6 +13,7 @@ public class Unit {
     public static final String UNIT_VALIDATION_REGEX = "[0123456789#-]+";
 
     public final String value;
+    private boolean isPrivate;
 
     /**
      * Validates given address.
@@ -25,6 +26,7 @@ public class Unit {
             throw new IllegalValueException(MESSAGE_UNIT_CONSTRAINTS);
         }
         this.value = trimmedUnit;
+        this.isPrivate = isPrivate;
     }
 
     /**

@@ -13,6 +13,7 @@ public class Postal {
     public static final String POSTAL_VALIDATION_REGEX = "[0123456789]+";
 
     public final String value;
+    private boolean isPrivate;
 
     /**
      * Validates given address.
@@ -25,6 +26,7 @@ public class Postal {
             throw new IllegalValueException(MESSAGE_POSTAL_CONSTRAINTS);
         }
         this.value = trimmedPostal;
+        this.isPrivate = isPrivate;
     }
 
     /**
