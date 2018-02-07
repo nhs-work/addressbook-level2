@@ -1,9 +1,11 @@
 package seedu.addressbook;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+import seedu.addressbook.commands.AddCommand;
 import seedu.addressbook.commands.Command;
 import seedu.addressbook.commands.CommandResult;
 import seedu.addressbook.commands.ExitCommand;
@@ -105,15 +107,32 @@ public class Main {
      * @param command user command
      * @return result of the command
      */
-    private CommandResult executeCommand(Command command)  {
+    private CommandResult executeCommand(Command command) {
+        AddressBook temp = addressBook;
         try {
             command.setData(addressBook, lastShownList);
             CommandResult result = command.execute();
             storage.save(addressBook);
             return result;
-        } catch (Exception e) {
+        } catch(IOException ioe){
+            this.ui.showToUser("The address book is currently in read-only format. Please change settings to allow write and enter 'done' to proceed.");
+            waitForUserConfirmation();
+            this.ui.showToUser("User has confirmed allowing read to address book. Executing previous command...");
+            //addressBook.removePerson();
+            executeCommand(command);
+            return new CommandResult("Previous command has been successfully executed");
+        }
+        catch (Exception e) {
             ui.showToUser(e.getMessage());
             throw new RuntimeException(e);
+        }
+    }
+
+    private void waitForUserConfirmation() {
+        String confirmation = ui.getUserCommand();
+        while(!confirmation.equals("done")){
+            this.ui.showToUser("Command not recognised. Please enter 'done' to confirm address book settings allow write.");
+            confirmation = ui.getUserCommand();
         }
     }
 
