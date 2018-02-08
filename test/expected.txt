@@ -313,7 +313,7 @@
 || 0 persons listed!
 || ===================================================
 || Enter command: || [Command entered:  add Tom p/1 e/1@1.com a/Block 1, Street 1, #1-11, 123456, wrongnumberofarguements1]
-|| Person addresses will contain block, street, unit and postal code separated by a comma
+|| Person addresses can contain 1-4 parameters: block, street, unit and postal code separated by a comma
 || ===================================================
 || Enter command: || [Command entered:  add Tom p/1 e/1@1.com a/Block 1, Street 1, #1-11, 12345a]
 || Postal code can only be numeric
