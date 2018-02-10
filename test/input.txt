@@ -149,6 +149,34 @@
   list
 
 ##########################################################
+# test sort command
+##########################################################
+
+  # set up new list to test for sort
+  add aac p/1 e/1@1.com a/1
+  add aaa p/1 e/1@1.com a/1
+  add a p/1 e/1@1.com a/1
+  add aba p/1 e/1@1.com a/1
+  add aa p/1 e/1@1.com a/1
+  add aaad p/1 e/1@1.com a/1
+  add aaab p/1 e/1@1.com a/1
+  add aaaa p/1 e/1@1.com a/1
+  list
+
+  # delete an entry to set up for test for sort command
+  delete 2
+  list
+
+  # test sort command
+  sort
+
+  # delete an entry to test for sort command
+  delete 3
+  list
+  clear
+  list
+
+##########################################################
 # test exit command
 ##########################################################
 
