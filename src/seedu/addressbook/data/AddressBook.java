@@ -121,6 +121,13 @@ public class AddressBook {
         return new UniqueTagList(allTags);
     }
 
+    /**
+     * Sorts the UniquePersonList of all persons in the address book at the time of the call in a lexicographic order.
+     */
+    public void sortAllPersons() {
+        allPersons.sort();
+    }
+
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
