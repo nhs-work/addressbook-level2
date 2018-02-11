@@ -70,6 +70,21 @@ Examples:
 * `find Betsy Tim John`<br>
   Returns Any person having names `Betsy`, `Tim`, or `John`
 
+### Finding all persons containing any keyword in their name (case-insensitive): `findci`
+Finds persons whose names contain any of the given keywords.<br>
+Format: `findci KEYWORD [MORE_KEYWORDS]`
+
+> The search is case insensitive, the order of the keywords does not matter, only the name is searched,
+and persons matching at least one keyword will be returned (i.e. `OR` search).
+
+Examples:
+* `find john`<br>
+  Returns `John Doe`
+* `find aLaN`<br>
+  Returns `Alan Lim`
+* `find Betsy Tim John`<br>
+  Returns Any person having names `Betsy`, `Tim`, or `John` (with any case)
+
 ### Deleting a person : `delete`
 Deletes the specified person from the address book. Irreversible.<br>
 Format: `delete INDEX`
