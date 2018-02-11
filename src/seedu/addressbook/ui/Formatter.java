@@ -65,9 +65,10 @@ public class Formatter {
     public String format(String... message) {
         String formattedString = new String();
         for (String m : message) {
-            formattedString = (formattedString + "\n" + m);
+            formattedString = (formattedString + m);
+            formattedString = (formattedString + "\n");
         }
-        return formattedString;
+        return formattedString.trim();
     }
 
     /**
