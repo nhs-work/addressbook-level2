@@ -78,7 +78,7 @@ public class Parser {
             return prepareFind(arguments);
 
         case FindCaseInsensitiveCommand.COMMAND_WORD:
-            return prepareFind(arguments);
+            return prepareFindCaseInsensitive(arguments);
 
         case ListCommand.COMMAND_WORD:
             return new ListCommand();
