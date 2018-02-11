@@ -40,15 +40,15 @@ public class Formatter {
     }
 
 
-    public void showWelcomeMessage(String version, String storageFilePath) {
+    public String formatShowWelcomeMessage(String version, String storageFilePath) {
         String storageFileInfo = String.format(MESSAGE_USING_STORAGE_FILE, storageFilePath);
-        showToUser(
-                DIVIDER,
-                DIVIDER,
-                MESSAGE_WELCOME,
-                version,
-                MESSAGE_PROGRAM_LAUNCH_ARGS_USAGE,
-                storageFileInfo,
+        return(
+                DIVIDER + "\n" +
+                DIVIDER + "\n" +
+                MESSAGE_WELCOME + "\n" +
+                version + "\n" +
+                MESSAGE_PROGRAM_LAUNCH_ARGS_USAGE + "\n" +
+                storageFileInfo + "\n" +
                 DIVIDER);
     }
 

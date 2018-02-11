@@ -2,9 +2,6 @@ package seedu.addressbook.ui;
 
 import static seedu.addressbook.common.Messages.MESSAGE_GOODBYE;
 import static seedu.addressbook.common.Messages.MESSAGE_INIT_FAILED;
-import static seedu.addressbook.common.Messages.MESSAGE_PROGRAM_LAUNCH_ARGS_USAGE;
-import static seedu.addressbook.common.Messages.MESSAGE_USING_STORAGE_FILE;
-import static seedu.addressbook.common.Messages.MESSAGE_WELCOME;
 
 import java.io.InputStream;
 import java.io.PrintStream;
@@ -95,15 +92,7 @@ public class TextUi {
 
 
     public void showWelcomeMessage(String version, String storageFilePath) {
-        String storageFileInfo = String.format(MESSAGE_USING_STORAGE_FILE, storageFilePath);
-        showToUser(
-                DIVIDER,
-                DIVIDER,
-                MESSAGE_WELCOME,
-                version,
-                MESSAGE_PROGRAM_LAUNCH_ARGS_USAGE,
-                storageFileInfo,
-                DIVIDER);
+        showToUser(formatter.formatShowWelcomeMessage(version, storageFilePath));
     }
 
     public void showGoodbyeMessage() {
