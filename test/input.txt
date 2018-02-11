@@ -177,6 +177,35 @@
   list
 
 ##########################################################
+# test findci command
+##########################################################
+
+  # set up new list to test for findci
+  add aAa p/1 e/1@1.com a/1
+  add a p/1 e/1@1.com a/1
+  add A p/1 e/1@1.com a/1
+  add aBcDeFg p/1 e/1@1.com a/1
+  add aBCDeFg p/1 e/1@1.com a/1
+  add aBCDeFG p/1 e/1@1.com a/1
+  add aBCDEFg p/1 e/1@1.com a/1
+  add ABCDEFG p/1 e/1@1.com a/1
+  list
+
+  # test findci command using lowercase
+  findci aaa
+  findci a
+  findci abcdefg
+
+  # test findci command using uppercase
+  findci ABCDEFG
+  findci AAA
+
+  # test findci command using alternating case
+  findci AbCdEfG
+  clear
+  list
+
+##########################################################
 # test exit command
 ##########################################################
 
