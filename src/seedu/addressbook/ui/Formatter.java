@@ -39,6 +39,7 @@ public class Formatter {
         return "[Command entered:" + fullInputLine + "]";
     }
 
+    public String formatGetUserCommand(){return (LINE_PREFIX + "Enter command: ");}
 
     public String formatShowWelcomeMessage(String version, String storageFilePath) {
         String storageFileInfo = String.format(MESSAGE_USING_STORAGE_FILE, storageFilePath);
