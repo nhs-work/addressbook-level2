@@ -78,7 +78,7 @@ public class Formatter {
         for (String m : message) {
             formattedString = (formattedString + LINE_PREFIX);
             formattedString = (formattedString + m.replace("\n", LS + LINE_PREFIX));
-            formattedString = (formattedString + "\r\n");
+            formattedString = (formattedString + "\n");
         }
         return formattedString.trim();
     }
