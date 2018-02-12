@@ -29,7 +29,7 @@ public class Person implements ReadOnlyPerson {
         this.address = address;
         this.tags = new UniqueTagList(tags); // protect internal tags from changes in the arg list
         this.sequenceNumber = nextSequenceNumber;
-        nextSequenceNumber += 1;
+        nextSequenceNumber = this.sequenceNumber + 1;
     }
 
     /**
