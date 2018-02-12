@@ -8,8 +8,8 @@ import seedu.addressbook.data.exception.IllegalValueException;
  */
 public class Contact {
 
-    public static String messageContactConstraints = "This message is to be overwritten in the child class";
-    public static String contactValidationRegex = ".+"; //This validation regex is to be overwritten in the child class
+    public String messageContactConstraints;
+    public String contactValidationRegex;
 
     public final String value;
     private boolean isPrivate;
@@ -19,8 +19,10 @@ public class Contact {
      *
      * @throws IllegalValueException if given contact detail string is invalid.
      */
-    public Contact(String contact, boolean isPrivate) throws IllegalValueException {
+    public Contact(String contact, boolean isPrivate, String message, String regex) throws IllegalValueException {
 
+        messageContactConstraints = message;
+        contactValidationRegex = regex;
         String trimmedContact = contact.trim();
         this.isPrivate = isPrivate;
         if (!isValid(trimmedContact)) {
@@ -32,7 +34,7 @@ public class Contact {
     /**
      * Returns true if a given string is a valid person address.
      */
-    public static boolean isValid(String test) {
+    public boolean isValid(String test) {
         return test.matches(contactValidationRegex);
     }
 

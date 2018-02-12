@@ -10,11 +10,6 @@ public class Phone extends Contact{
 
     public static final String EXAMPLE = "123456789";
 
-    static {
-        messageContactConstraints = "Person phone numbers should only contain numbers";
-        contactValidationRegex =   "\\d+";
-    }
-
     /**
      * Validates given contact detail.
      *
@@ -23,6 +18,6 @@ public class Phone extends Contact{
      * @throws IllegalValueException if given contact detail string is invalid.
      */
     public Phone(String contact, boolean isPrivate) throws IllegalValueException {
-        super(contact, isPrivate);
+        super(contact, isPrivate, "Person phone numbers should only contain numbers", "\\d+");
     }
 }
