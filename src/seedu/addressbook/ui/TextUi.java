@@ -18,8 +18,6 @@ import seedu.addressbook.data.person.ReadOnlyPerson;
  */
 public class TextUi {
 
-    private static final String DIVIDER = "===================================================";
-
     /** Offset required to convert between 1-indexing and 0-indexing.  */
     public static final int DISPLAYED_INDEX_OFFSET = 1;
 
@@ -108,7 +106,7 @@ public class TextUi {
         if (resultPersons.isPresent()) {
             showPersonListView(resultPersons.get());
         }
-        showToUser(result.feedbackToUser, DIVIDER);
+        out.println(formatter.formatShowResultToUser(result));
     }
 
     /**

@@ -88,7 +88,7 @@ public class Formatter {
      * command execution segments.
      */
     public String formatShowResultToUser(CommandResult result) {
-        return format(result.feedbackToUser, DIVIDER);
+        return formatLinePrefix(result.feedbackToUser, DIVIDER);
     }
 
     /** Formats a list of strings as a viewable indexed list. */
