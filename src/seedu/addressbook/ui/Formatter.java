@@ -61,12 +61,23 @@ public class Formatter {
         return format(MESSAGE_INIT_FAILED, DIVIDER, DIVIDER);
     }
 
-    /** Shows message(s) to the user */
+    /** Formats message(s) to the user (newline) */
     public String format(String... message) {
         String formattedString = new String();
         for (String m : message) {
             formattedString = (formattedString + m);
             formattedString = (formattedString + "\n");
+        }
+        return formattedString.trim();
+    }
+
+    /** Formats message(s) to the user (line prefix) */
+    public String formatLinePrefix(String... message) {
+        String formattedString = new String();
+        for (String m : message) {
+            formattedString = (formattedString + LINE_PREFIX);
+            formattedString = (formattedString + m.replace("\n", LS + LINE_PREFIX));
+            formattedString = (formattedString + "\r\n");
         }
         return formattedString.trim();
     }
