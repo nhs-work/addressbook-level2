@@ -57,7 +57,7 @@ public class Formatter {
     }
 
 
-    public String showInitFailedMessage() {
+    public String formatShowInitFailedMessage() {
         return format(MESSAGE_INIT_FAILED, DIVIDER, DIVIDER);
     }
 

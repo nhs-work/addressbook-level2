@@ -101,7 +101,7 @@ public class TextUi {
 
 
     public void showInitFailedMessage() {
-        showToUser(MESSAGE_INIT_FAILED, DIVIDER, DIVIDER);
+        showToUser(formatter.formatShowInitFailedMessage());
     }
 
     /** Shows message(s) to the user */
