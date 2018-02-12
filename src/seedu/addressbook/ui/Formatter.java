@@ -83,36 +83,15 @@ public class Formatter {
     }
 
     /**
-     * Shows the result of a command execution to the user. Includes additional formatting to demarcate different
+     * Formats the result of a command execution to the user. Includes additional formatting to demarcate different
      * command execution segments.
      */
-    public String showResultToUser(CommandResult result) {
-        final Optional<List<? extends ReadOnlyPerson>> resultPersons = result.getRelevantPersons();
-        if (resultPersons.isPresent()) {
-            showPersonListView(resultPersons.get());
-        }
+    public String formatShowResultToUser(CommandResult result) {
         return format(result.feedbackToUser, DIVIDER);
     }
 
-    /**
-     * Shows a list of persons to the user, formatted as an indexed list.
-     * Private contact details are hidden.
-     */
-    private void showPersonListView(List<? extends ReadOnlyPerson> persons) {
-        final List<String> formattedPersons = new ArrayList<>();
-        for (ReadOnlyPerson person : persons) {
-            formattedPersons.add(person.getAsTextHidePrivate());
-        }
-        showToUserAsIndexedList(formattedPersons);
-    }
-
-    /** Shows a list of strings to the user, formatted as an indexed list. */
-    private String showToUserAsIndexedList(List<String> list) {
-        return format(getIndexedListForViewing(list));
-    }
-
     /** Formats a list of strings as a viewable indexed list. */
-    private static String getIndexedListForViewing(List<String> listItems) {
+    public static String formatGetIndexedListForViewing(List<String> listItems) {
         final StringBuilder formatted = new StringBuilder();
         int displayIndex = 0 + DISPLAYED_INDEX_OFFSET;
         for (String listItem : listItems) {

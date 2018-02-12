@@ -140,13 +140,7 @@ public class TextUi {
 
     /** Formats a list of strings as a viewable indexed list. */
     private static String getIndexedListForViewing(List<String> listItems) {
-        final StringBuilder formatted = new StringBuilder();
-        int displayIndex = 0 + DISPLAYED_INDEX_OFFSET;
-        for (String listItem : listItems) {
-            formatted.append(getIndexedListItem(displayIndex, listItem)).append("\n");
-            displayIndex++;
-        }
-        return formatted.toString();
+        return Formatter.formatGetIndexedListForViewing(listItems);
     }
 
     /**
