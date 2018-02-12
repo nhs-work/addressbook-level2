@@ -67,7 +67,7 @@ public class AddCommand extends Command {
     public CommandResult execute() {
         try {
             addressBook.addPerson(toAdd);
-            return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));
+            return new CommandResult(String.format(MESSAGE_SUCCESS + "Sequence number is: " + Integer.toString(toAdd.getSequenceNumber()), toAdd));
         } catch (UniquePersonList.DuplicatePersonException dpe) {
             return new CommandResult(MESSAGE_DUPLICATE_PERSON);
         }
