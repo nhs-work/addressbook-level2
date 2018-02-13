@@ -152,7 +152,7 @@ public class DeleteCommandTest {
 
         AddressBook expectedAddressBook = TestUtil.clone(addressBook);
         expectedAddressBook.removePerson(targetPerson);
-        String expectedMessage = String.format(DeleteCommand.MESSAGE_DELETE_PERSON_SUCCESS + "Sequence number is: " + Integer.toString(targetPerson.getSequenceNumber()), targetPerson);
+        String expectedMessage = String.format(DeleteCommand.MESSAGE_DELETE_PERSON_SUCCESS + " Sequence number is: " + Integer.toString(targetPerson.getSequenceNumber()), targetPerson);
 
         AddressBook actualAddressBook = TestUtil.clone(addressBook);
 

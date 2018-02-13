@@ -71,6 +71,7 @@ public interface ReadOnlyPerson {
         for (Tag tag : getTags()) {
             builder.append(tag);
         }
+        builder.append(" Sequence number is: " + this.getSequenceNumber());
         return builder.toString();
     }
 
