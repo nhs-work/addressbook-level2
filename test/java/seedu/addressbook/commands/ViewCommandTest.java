@@ -115,7 +115,7 @@ public class ViewCommandTest {
                                                 personToBeViewed.getAsTextHidePrivate());
         assertViewBehavior(new ViewCommand(targetVisibleIndex), addressBook, relevantPersons, expectedMessage);
 
-        expectedMessage = String.format(ViewAllCommand.MESSAGE_VIEW_PERSON_DETAILS  + " Sequence number is: " + Integer.toString(personToBeViewed.getSequenceNumber()),
+        expectedMessage = String.format(ViewAllCommand.MESSAGE_VIEW_PERSON_DETAILS  + "Sequence number is: " + Integer.toString(personToBeViewed.getSequenceNumber()),
                                                 personToBeViewed.getAsTextShowAll());
         assertViewBehavior(new ViewAllCommand(targetVisibleIndex), addressBook, relevantPersons, expectedMessage);
     }
