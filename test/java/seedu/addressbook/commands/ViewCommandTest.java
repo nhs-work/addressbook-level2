@@ -111,11 +111,11 @@ public class ViewCommandTest {
         // get person to be viewed (targetVisibleIndex - 1 because index is one-indexed)
         ReadOnlyPerson personToBeViewed = relevantPersons.get(targetVisibleIndex - 1);
 
-        String expectedMessage = String.format(ViewCommand.MESSAGE_VIEW_PERSON_DETAILS,
+        String expectedMessage = String.format(ViewCommand.MESSAGE_VIEW_PERSON_DETAILS  + "Sequence number is: " + Integer.toString(personToBeViewed.getSequenceNumber()),
                                                 personToBeViewed.getAsTextHidePrivate());
         assertViewBehavior(new ViewCommand(targetVisibleIndex), addressBook, relevantPersons, expectedMessage);
 
-        expectedMessage = String.format(ViewAllCommand.MESSAGE_VIEW_PERSON_DETAILS,
+        expectedMessage = String.format(ViewAllCommand.MESSAGE_VIEW_PERSON_DETAILS  + "Sequence number is: " + Integer.toString(personToBeViewed.getSequenceNumber()),
                                                 personToBeViewed.getAsTextShowAll());
         assertViewBehavior(new ViewAllCommand(targetVisibleIndex), addressBook, relevantPersons, expectedMessage);
     }
