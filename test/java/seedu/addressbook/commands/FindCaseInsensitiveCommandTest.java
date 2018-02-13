@@ -49,10 +49,18 @@ public class FindCaseInsensitiveCommandTest {
     }
 
     private FindCaseInsensitiveCommand createFindCommand(String[] keywords) {
+        keywords = toLowerCase(keywords);
         final Set<String> keywordSet = new HashSet<>(Arrays.asList(keywords));
         FindCaseInsensitiveCommand command = new FindCaseInsensitiveCommand(keywordSet);
         command.setData(addressBook, Collections.emptyList());
         return command;
+    }
+
+    private String[] toLowerCase(String[] keywords) {
+        for(int i = 0; i < keywords.length; i++){
+            keywords[i] = keywords[i].toLowerCase();
+        }
+        return keywords;
     }
 
 }
